@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import division
-import math
-import numpy
 from numpy import *
 import matplotlib.pyplot as plt
 
@@ -17,8 +15,7 @@ def func(x):
 def funcd(x):
 	return exp(x)
 def f(z):
-	return (((-1/4)*func(x0-2*z)+(-1/4)*func(x0-z)+(5/2)*func(x0)+
-		(-7/2)*func(x0+z)+(7/4)*func(x0+2*z)+(-1/4)*func(x0+3*z))/(z*z*z))
+	return (((-1/4)*func(x0-2*z)+(-1/4)*func(x0-z)+(5/2)*func(x0)+ (-7/2)*func(x0+z)+(7/4)*func(x0+2*z)+(-1/4)*func(x0+3*z))/(z*z*z))
 
 hList = linspace(hMin, hMax, numberOfPoints)
 hLogList = log(hList)
