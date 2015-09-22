@@ -4,7 +4,7 @@
 from __future__ import division
 from datetime import datetime
 from numpy import *
-__author__ = 'van_mit'
+__author__ = 'ivan_mitskovets'
 
 def isItOk(x,rang):
     if x != rang:
