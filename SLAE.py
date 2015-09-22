@@ -42,9 +42,10 @@ B = inputFile.readline().split(" ")
 isItOk(size(B), n)
 for i in range(n):
     B[i] = float(B[i])
-    # A[i] = raw_input("Enter line #" + str(i) + " ").split(" ")
-    A[i] = inputFile.readline().split(" ")
-    isItOk(size(A[i]), n) #TODO do not work?
+    # tmp = raw_input("Enter line #" + str(i) + " ").split(" ")
+    tmp = inputFile.readline().split(" ")
+    isItOk(size(tmp), n)
+    A[i] = tmp
 inputFile.close()
 # input end
 now1_1 = datetime.now().microsecond
