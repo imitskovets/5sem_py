@@ -25,16 +25,26 @@ def setToZeroOnlyColumn(column):
         index = A[i][column]/A[column][column]
         A[i][column] = 0
         B[i] -= index * B[column]
-n = int(raw_input("Enter system's rang n = "))
+# input begin
+try:
+    inputFile = open("inputSLAE.txt")
+except IOError:
+    print ("No file")
+# n = int(raw_input("Enter system's rang n = "))
+n = int(inputFile.readline())
 A = zeros((n, n), dtype=float)
 X1 = zeros(n, dtype=float)
-B = raw_input("Enter vector B ").split(" ")
+# B = raw_input("Enter vector B ").split(" ")
+B = inputFile.readline().split(" ")
 isItOk(size(B), n)
 for i in range(n):
     B[i] = float(B[i])
-    A[i] = raw_input("Enter line #" + str(i) + " ").split(" ")
-    isItOk(size(A[i]), n)                                                                               #TODO do not work
-now1_1 = datetime.now().microsecond                                                                              # vertical is first
+    # A[i] = raw_input("Enter line #" + str(i) + " ").split(" ")
+    A[i] = inputFile.readline().split(" ")
+    isItOk(size(A[i]), n) #TODO do not work?
+inputFile.close()
+# input end
+now1_1 = datetime.now().microsecond
 X0 = linalg.solve(A, B)
 now1_2 = datetime.now().microsecond
 A0 =A
