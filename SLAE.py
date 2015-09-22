@@ -35,7 +35,7 @@ except IOError:
     print ("No file")
 # n = int(raw_input("Enter system's rang n = "))
 n = int(inputFile.readline())
-A = zeros((n, n), dtype=float)
+A  = zeros((n, n), dtype=float)
 X1 = zeros(n, dtype=float)
 # B = raw_input("Enter vector B ").split(" ")
 B = inputFile.readline().split(" ")
@@ -70,5 +70,7 @@ now2_2 = datetime.now().microsecond
 print "my gauss result :"
 print X1
 print " my time = " + str(now2_2 - now2_1)
-print "                   deltaT = " + str(now1_2 - now1_1 -now2_2 + now2_1)
+print "error :"
+print str(abs(X1-X0))
+print "                   deltaT = " + str(now1_2 - now1_1 - now2_2 + now2_1)
 
