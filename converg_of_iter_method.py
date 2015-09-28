@@ -22,19 +22,21 @@ A = matrixcreator(1, 2, 3, 6)
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')
-pdim = 30
+pdimr = 1
+pdiml = 1
+d = 0.05
 
-for i in range(pdim+1):
-    for j in range(pdim+1):
-            for k in range(pdim+1):
-                A = matrixcreator(i, j, k, pdim)
+for i in np.arange(-pdiml, pdimr, d):
+    for j in np.arange(-pdiml, pdimr, d):
+            for k in np.arange(-pdiml, pdimr, d):
+                A = matrixcreator(i, j, k, pdimr+pdiml)
                 if (np.linalg.norm(A, 1) <= 1.):
                     ax.scatter(i, j, k, zdir='k')
 
 ax.legend()
-ax.set_xlim3d(0, pdim)
-ax.set_ylim3d(0, pdim)
-ax.set_zlim3d(0, pdim)
+ax.set_xlim3d(-pdiml, pdimr)
+ax.set_ylim3d(-pdiml, pdimr)
+ax.set_zlim3d(-pdiml, pdimr)
 
 plt.show()
 
