@@ -24,7 +24,7 @@ fig = plt.figure()
 ax = fig.gca(projection='3d')
 pdimr = 1
 pdiml = 1
-d = 0.05
+d = 0.1
 
 for i in np.arange(-pdiml, pdimr, d):
     for j in np.arange(-pdiml, pdimr, d):
