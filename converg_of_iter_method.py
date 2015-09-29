@@ -22,8 +22,8 @@ A = matrixcreator(1, 2, 3, 6)
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')
-pdimr = 1
-pdiml = 1
+pdimr = 3
+pdiml = 3
 d = 0.1
 
 for i in np.arange(-pdiml, pdimr, d):
