@@ -1,19 +1,22 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+from __future__ import division
+from numpy import *
 
-# input begin
-try:
-    inputFile = open("lab3.test.csv")
-except IOError:
-    print ("No file")
-A  = zeros((2315, 33), dtype=float)
-X1 = zeros(2315, dtype=float)
-B = inputFile.readline().split(" ")
-isItOk(size(B), n)
-for i in range(n):
-    B[i] = float(B[i])
-    tmp = inputFile.readline().split(" ")
-    isItOk(size(tmp), n)
-    A[i] = tmp
+inputFile = open("lab3.test.csv")
+outputFile = open("lab3.test2.csv", 'w')
+n = 18
+k = n + 1
+m = 2314
+A = zeros((m + 1, k), dtype=float)
+X = zeros(m + 1, dtype=float)
+for i in range(m):
+    tmp = inputFile.readline().split(",")
+    X[i] = tmp[k+1]
+    for j in range(k):
+        A[i][j] = tmp[j]
+#
+#
+for i in range(m):
+    outputFile.write(str(A[i]))
+    outputFile.write(str(X[i]))
+    outputFile.write('\n')
 inputFile.close()
-# input end
