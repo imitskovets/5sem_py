@@ -1,5 +1,6 @@
 #!usr/bin/python
 # -*- coding: utf-8 -*-
+
 import numpy as np
 from datetime import datetime
 from scipy.optimize import minimize
@@ -25,6 +26,7 @@ n = 0
 un = u0
 while np.linalg.norm(func2(un[0], un[1])) > accuracy:
     un -= np.dot(np.linalg.inv(myGradient(un[0], un[1])), func2(un[0], un[1]))
+    #un -= np.dot(np.linalg.inv(myGradient(0.8, 0.8)), func2(un[0], un[1]))
     n += 1
 time_11 = datetime.now().microsecond
 
