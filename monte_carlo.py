@@ -41,13 +41,13 @@ for i in range(number_of_points):
 volume = total_volume * hit_number / number_of_points
 print 'Integral of ' + str(n) + ' dimension gauss = ' + str(volume)
 volume = 0
-total_volume = 0
+hit_number = 0
 r = 0.1
 for i in range(number_of_points):
     x = []
     for j in range(n):
         x.append(random.uniform(0, 1))
-    if (1 > func1(x, n)**2) and (r < func1(x, n)**2):
+    if (1 > func1(x, n)**2) and (r**2 < func1(x, n)**2):
         hit_number += 1
 volume = total_volume * hit_number / number_of_points
 print 'Volume of ' + str(n) + ' dimension sphere with hole(r = ' + str(r) + ') = ' + str(volume)
